@@ -1,0 +1,502 @@
+:root {
+    --main-color: #f25454;
+    --sec-color: #1f2528;
+    --main-transition: 0.3s linear;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Start Global rules */
+.bg-gray {
+    background-color: #fafafa;
+}
+
+.unset-class {
+    position: unset;
+}
+
+.main-header h2 {
+    color: var(--sec-color);
+    font-size: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 767px) {
+    .main-header h2 {
+        font-size: 30px;;
+    }
+}
+
+.main-header h2::before {
+    content: attr(attr-name);
+    font-size: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+@media (max-width: 767px) {
+    .main-header h2::before {
+        font-size: 50px
+    }
+}
+
+.main-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background-color: var(--sec-color);
+    transition: var(--main-transition);
+}
+
+.main-header h2:hover::after {
+    width: 75px;
+}
+
+@media (min-width: 991px) {
+    .w-md-65 {
+        width: 65%;
+    }
+}
+
+.main-header p {
+    color: #999;
+}
+
+@media (max-width: 767px) {
+    .main-header p {
+        font-size: 16px !important;
+    }
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+/* End Global rules */
+
+/* Start Header */
+header {
+    background-image: url(../images/slideshow-1.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: animate-background 5s linear infinite;
+}
+
+header nav {
+    border-bottom: 0.2px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+header ul a {
+    font-size: 14px !important;
+    transition: var(--main-transition);
+    color: #fff !important;
+}
+
+header ul a.active,
+header ul a:hover {
+    color: var(--main-color) !important;
+}
+
+header .content h1::before {
+    content: 'We build great brands.';
+    font-size: 80px;
+    animation: animate-text 5s linear infinite;
+}
+
+@media (max-width: 991px) {
+    header .content h1::before {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    header .content h1::before {
+        font-size: 35px;
+    }
+}
+
+.scroll {
+    left: -10px;
+}
+
+.scroll > * {
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    transition: var(--main-transition);
+}
+
+.scroll .scroll-left::before,
+.scroll .scroll-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    transition: var(--main-transition);
+}
+
+.scroll .scroll-left:hover:before,
+.scroll .scroll-right:hover:before {
+    width: 100%;
+}
+
+.scroll i {
+    transition: var(--main-transition);
+}
+
+.scroll .scroll-left:hover i,
+.scroll .scroll-right:hover i {
+    color: var(--main-color);
+    position: relative;
+    z-index: 3;
+}
+
+.scroll-down {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.scroll-down:hover {
+    border-color: var(--main-color);
+}
+
+.scroll-down::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -250%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: animte-down 2s linear infinite;
+    transition: var(--main-transition);
+}
+
+.scroll-down:hover::before{
+    background-color: var(--main-color);
+}
+
+.gears {
+    top: 15%;
+    left: -253px;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.gears:hover {
+    left: 0;
+}
+
+.gears .top-content {
+    border-bottom: 1px solid var(--sec-color)
+}
+
+.top-content p {
+    color: var(--sec-color)
+}
+
+.top-content p:nth-child(2) {
+    font-weight: 600;
+}
+
+.top-content p:nth-child(3),
+.top-content p:nth-child(4) {
+    font-size: 14px;
+}
+
+.bottom-content li {
+    width: 25px;
+    height: 25px;
+    border-radius: 3px;;
+    cursor: pointer;
+}
+
+.bottom-content li:not(:last-child) {
+    margin-right: 3px;
+}
+
+.bottom-content li:nth-child(1) {
+    background-color: #f25454;
+}
+
+.bottom-content li:nth-child(2) {
+    background-color: #4e9cb5;
+}
+
+.bottom-content li:nth-child(3) {
+    background-color: #24bca4;
+}
+
+.bottom-content li:nth-child(4) {
+    background-color: #46cad7;
+}
+
+.bottom-content li:nth-child(5) {
+    background-color: #c86f98;
+}
+
+.bottom-content li:nth-child(6) {
+    background-color: #ee8f67;
+}
+
+.bottom-content li:nth-child(7) {
+    background-color: #e4d20c;
+}
+
+.bottom-content li:nth-child(8) {
+    background-color: #6b798f;
+}
+
+.gears .icon {
+    background-color: var(--sec-color);
+    width: 50px;
+    transition: var(--main-transition);
+}
+
+.gears:hover .icon {
+    filter: opacity(0.7);
+}
+
+.gears .icon i {
+    font-size: 20px;
+}
+
+/* End header */
+
+/* Start About */
+.prog-bar {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 7px;
+    border-radius: 20px;
+}
+
+.prog-bar span {
+    background-color: var(--main-color);
+}
+/* End About */
+
+/* Start team */
+.our-team .card {
+    cursor: pointer;
+}
+
+.our-team .card img {
+    transition: var(--main-transition);
+}
+.our-team .card:hover img {
+    transform: scale(1.2);
+}
+
+.our-team .card .layer {
+    transition: var(--main-transition);
+    top: 10px;
+    visibility: hidden;
+}
+.our-team .card:hover .layer {
+    top: 0;
+    visibility: visible;
+    opacity: 1 !important;
+}
+
+.our-team .card .card-title {
+    transition: var(--main-transition);
+}
+
+.our-team .card:hover .card-title {
+    color: var(--main-color)
+}
+
+button.btn {
+    transition: var(--main-transition);
+}
+
+button.btn:hover {
+    filter: opacity(0.7);
+
+}
+
+@media (max-width: 767px) {
+    .idea h2 {
+        margin-bottom: 15px;
+    }
+}
+
+/* End team */
+
+/* Start Services */
+.services .box {
+    cursor: pointer;
+}
+
+.services h4 {
+    color: var(--sec-color);
+    transition: var(--main-transition)
+}
+.services i,
+.services .box:hover h4 {
+    color: var(--main-color);
+}
+/* End Services */
+
+/* Start Client review */
+.client-review .carousel-indicators [data-bs-target] {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    text-indent: 0;
+}
+
+.client-review .carousel-indicators [data-bs-target] img {
+    width: 200% !important;
+}
+/* End Client review */
+
+/* Start Top footer */
+.top-footer {
+    background-image: url(../images/dotted-map.png);
+    background-color: #222;
+    background-size: contain;
+    background-position: center;
+}
+
+.top-footer .to-top {
+    background-color: var(--main-color);
+    top: -15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.to-top:hover {
+    filter: opacity(0.7);
+}
+
+.top-footer .logo {
+    top: 15%;
+}
+
+.top-footer p,
+.top-footer a {
+    color: #b0b0b0;
+    transition: var(--main-transition);
+}
+
+.top-footer a:hover {
+    color: var(--main-color)
+}
+
+.top-footer .row .row .box {
+    border: 1px solid #b0b0b0;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-footer .row .row .box p {
+    font-size: 12px;
+}
+
+/* End Top footer */
+
+/* Start bottom footer */
+.bottom-footer {
+    background-color: #1a1a1a;
+}
+
+.bottom-footer span,
+.bottom-footer i {
+    transition: var(--main-transition);
+}
+
+.bottom-footer p {
+    font-size: 14px;
+}
+
+.bottom-footer span:hover,
+.bottom-footer i:hover {
+    color: var(--main-color) !important;
+}
+
+/* End bottom footer */
+/* Start Animation */
+@keyframes animate-background {
+    0%, 100% {
+        background-image: url(../images/slideshow-1.jpg);
+    }
+
+    50% {
+        background-image: url(../images/slideshow-2.jpg);
+    }
+
+    75% {
+        background-image: url(../images/slideshow-3.jpg);
+    }
+}
+
+@keyframes animate-text {
+    0%, 100% {
+        content: 'We build great brands.';
+
+    }
+
+    50% {
+        content: 'Advanced in digital works.';
+
+    }
+
+    75% {
+        content: 'Focused on strategy.';
+
+    }
+}
+
+@keyframes animte-down {
+    0%, 100% {
+        transform: translate(-50%, -250%);
+    }
+
+    25% {
+        transform: translate(-50%, 200%);
+    }
+    
+    50% {
+        transform: translate(-50%, 150%);
+    }
+
+    75% {
+        transform: translate(-50%, 100%);
+    }
+}
+
+/* End Animation */
